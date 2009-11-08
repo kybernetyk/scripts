@@ -1,0 +1,5 @@
+Usefull scripts:
+
+funblog_proxy.sh - proxy with funblog me on localhost:8887
+git-create-branch - add a new branch to current git repo
+superking_proxy.sh - proxy with superking.org on localhost:8886
