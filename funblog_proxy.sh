@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ssh -D localhost:8887 root@funblog.me
+ssh -g -D 8887 root@funblog.me
