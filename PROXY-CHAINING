@@ -1,0 +1,23 @@
+chaining sash tunnels with an SOCKS proxy endpoint:
+
+ssh -t -L 8887:localhost:8886 root@superking.org ssh -t -L 8886:localhost:8885 root@funblog.me ssh -t -g -D 8885 root@superking.org
+------------------------------------------------ +++++++++++++++++++++++++++++++++++++++++++++ ------------------------------------
+command on localhost				 command on superking			       command on funblog
+
+1. on localhost the port 8887 is bound. connections to localhost:8887 will be forwarded to superking:8886
+2. on superking the port 8886 is bound. connections to superking:8886 will be forwarded to funblog:8885
+3. on funblog the port 8885 is bound and acts as a SOCKS proxy.
+
+you will have a SOCKS proxy on localhost:8887
+
+alternative you can do 3-2-1 manually:
+
+from localhost ssh to funblog an type:
+fublog$: sash -D 8885 root@superking.org [note the missing -g!]
+
+from localhost ssh to superking an type:
+superking$: ssh -t -L 8886:localhost:8885 root@funblog.me
+
+on localhost:
+localhost$: ssh -t -L 8887:localhost:8886 root@superking.org
+

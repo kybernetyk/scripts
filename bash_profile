@@ -15,4 +15,3 @@ man -t ${1} | open -f -a /Applications/Preview.app
 export CLICOLOR="true"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-test -r /sw/bin/init.sh && . /sw/bin/init.sh
