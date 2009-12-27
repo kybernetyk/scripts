@@ -1,0 +1,1 @@
+ncat -l 127.0.0.1 5555 --sh-exec "ncat funblog.me 22 -o lolssh"
